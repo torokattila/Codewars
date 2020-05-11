@@ -20,6 +20,3 @@ function getMinMax(arr) {
     resultArray.push(max);
     return resultArray;
 };
-
-
-console.log(getMinMax([1]));
