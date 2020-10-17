@@ -18,8 +18,7 @@ function top3(products, amounts, prices) {
         return productsWithRevenue[b] - productsWithRevenue[a];
     })
 
-    // return sortedProducts.slice(0, 3);
-    return productsWithRevenue;
+    return sortedProducts.slice(0, 3);
 }
 
 console.log(top3([ 'Cell Phones',
