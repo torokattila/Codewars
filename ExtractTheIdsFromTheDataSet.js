@@ -15,7 +15,9 @@ extractIds(data) // should return [1,2,3,4,5]
 The method should be able to handle the case of empty data being passed in.
 
 Note: The only arrays that need to be traversed are those assigned to the "items" property.*/
+
 function extractIds(data) {
+    if (!data || Object.keys(data).length === 0) return [];
     return Object.entries(data).reduce(
         (accum, [key, value]) =>
             key === 'id'
