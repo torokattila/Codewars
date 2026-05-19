@@ -1,0 +1,34 @@
+/*
+Sorted? yes? no? how? (7 kyu)
+
+Complete the method which accepts an array of integers, and returns one of the following:
+
+"yes, ascending" - if the numbers in the array are sorted in an ascending order
+"yes, descending" - if the numbers in the array are sorted in a descending order
+"no" - otherwise
+The order does not have to be strict: a sorted array can contain consecutive duplicates, e.g. 
+[1, 1, 2, 3] is sorted in ascending order.
+
+It is guaranteed that there will always be a unique valid answer. More precisely:
+
+there will be no arrays with less than 2 elements
+there will be no arrays where all elements are equal
+*/
+
+export function isSortedAndHow(array: number[]): string {
+  const isAscending = array.every((num, i) => i === 0 || num >= array[i - 1]);
+  const isDescending = array.every((num, i) => i === 0 || num <= array[i - 1]);
+
+  if (isAscending) {
+    return 'yes, ascending';
+  } else if (isDescending) {
+    return 'yes, descending';
+  } else {
+    return 'no';
+  }
+}
+
+console.log(isSortedAndHow([1, 3, 9, 4]));
+console.log(isSortedAndHow([4, 3, 1, 9]));
+console.log(isSortedAndHow([1, 2]));
+console.log(isSortedAndHow([2, 1]));
